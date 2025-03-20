@@ -3,7 +3,7 @@
 int main()
 {
     char v='A';
-    int* p = null;
+    int* p = NULL;
     p=&v;
     printf("Address of v: %x\n",v);
     printf("Address stored in p: %x\n",p);
