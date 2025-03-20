@@ -12,7 +12,7 @@ int main()
 {
     int n=1,m=2;
     func(&n,&m);
-    printf("in main, i = %d, j = %d\n",*i,*j);
+    printf("in main, i = %d, j = %d\n",i,j);
 
     return 0;
 }
