@@ -3,7 +3,7 @@ using namespace std;
 
 class TicTacToe {
 private:
-    int board[3][3]; // 0 = 空, 1 = 玩家1, 2 = 玩家2
+    int board[3][3];
     int current_player;
 
 public:
@@ -22,6 +22,7 @@ public:
     void display_board() {
         cout << "\n";
         for (int i = 0; i < 3; ++i) {
+            if (i < 3) cout << "   ■   ■   \n";
             for (int j = 0; j < 3; ++j) {
                 if (board[i][j] == 1)
                     cout << " X ";
@@ -29,10 +30,11 @@ public:
                     cout << " O ";
                 else
                     cout << " " << (i * 3 + j + 1) << " ";
-                if (j < 2) cout << "|";
+                if (j < 2) cout << "■";
             }
             cout << "\n";
-            if (i < 2) cout << "---|---|---\n";
+            if (i < 3) cout << "   ■   ■   \n";
+            if (i < 2) cout << "■■■■■■■■■■■\n";
         }
         cout << "\n";
     }
@@ -53,7 +55,7 @@ public:
     }
 
     void switch_player() {
-        current_player = 3 - current_player; // 1 -> 2, 2 -> 1
+        current_player = 3 - current_player; 
     }
 
     bool check_win() {
@@ -96,10 +98,9 @@ int main() {
     int pos;
 
     while (true) {
+        cout << "-- Tic Tac Toe --CSIE@CGU\nPlayer 1 (X)  -  Player 2 (O)";
         game.display_board();
-        cout << "Player " << game.get_current_player() << " (" 
-             << (game.get_current_player() == 1 ? 'X' : 'O') 
-             << "), enter your move (1-9): ";
+        cout << "Player " << game.get_current_player() << ", enter your move (1-9): ";
         cin >> pos;
 
         if (!game.make_move(pos))
@@ -107,13 +108,13 @@ int main() {
 
         if (game.check_win()) {
             game.display_board();
-            cout << "Player " << game.get_current_player() << " wins!\n";
+            cout << "==>Player " << game.get_current_player() << " wins\n";
             break;
         }
 
         if (game.is_draw()) {
             game.display_board();
-            cout << "It's a draw!\n";
+            cout << "==>Game draw\n";
             break;
         }
 
