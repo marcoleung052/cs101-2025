@@ -35,8 +35,8 @@ class Car {
 
 class BMW_Car : public Car{
     public:
-    BMW_Car(string y,int z,int s):Car("\nBMW",y,z,s){
-        cout<<"Constructing BMW_Car";
+    BMW_Car(string y,int z,int s):Car("BMW",y,z,s){
+        cout<<"\nConstructing BMW_Car";
         m_DriveMode="Rear-wheel";
     }
     string get_DriveMode(){
@@ -46,8 +46,8 @@ class BMW_Car : public Car{
 
 class AUDI_Car : public Car{
     public:
-    AUDI_Car(string y,int z,int s):Car("\nAudi",y,z,s){
-        cout<<"Constructing AUDI_Car";
+    AUDI_Car(string y,int z,int s):Car("Audi",y,z,s){
+        cout<<"\nConstructing AUDI_Car";
         m_DriveMode="Front-wheel";
     }
     string get_DriveMode(){
@@ -57,8 +57,8 @@ class AUDI_Car : public Car{
 
 class BENZ_Car : public Car{
     public:
-    BENZ_Car(string y,int z,int s):Car("\nBenz",y,z,s){
-        cout<<"Constructing BENZ_Car";
+    BENZ_Car(string y,int z,int s):Car("Benz",y,z,s){
+        cout<<"\nConstructing BENZ_Car";
         m_DriveMode="Front-wheel";
     }
     string get_DriveMode(){
